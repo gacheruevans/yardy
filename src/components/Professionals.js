@@ -60,7 +60,7 @@
               height: 100,
               width: 100,
               padding: 20,
-              marginLeft: 130,
+              marginLeft: 0,
               marginRight: 0,}}>
             <Text style={{fontSize: 12, color: `white`}}>{item.title}</Text>
             <Text>{item.text}</Text>
@@ -76,7 +76,7 @@
                 activeDotIndex={activeSlide}
                 containerStyle={{ 
                     backgroundColor: 'transparent',
-                    marginLeft: 120,
+                    marginLeft: 100,
                     width: 100,
                 }}
                 dotStyle={{
@@ -98,14 +98,14 @@
 
     render() {
         return (
-          <SafeAreaView style={{flex: 1, paddingTop: 20, }}>
+          <SafeAreaView style={{flex: 1, paddingTop: 20 }}>
             <View style={{ flex: 1, flexDirection:'row', justifyContent: 'center', }}>
                 <Carousel
                   layout={"default"}
                   ref={ref => this.carousel = ref}
                   data={this.state.labourers}
                   sliderWidth={300}
-                  itemWidth={300}
+                  itemWidth={100}
                   renderItem={this._renderItem}
                   onSnapToItem = { index => this.setState({activeIndex:index}) } />
             </View>
