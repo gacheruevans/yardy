@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import type { Node } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -17,14 +17,11 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import Colors from './src/assets/styles/Colors';
+import Header from './src/components/Heroimg';
+import ListGallery from './src/components/ListGallery';
+import Professionals from './src/components/Professionals';
+import DiyGridMenu from './src/components/DiyGridMenu';
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -70,20 +67,13 @@ const App: () => Node = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
+          <Section title="Looking for a professional?">
+            <Professionals />
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+          <DiyGridMenu />
+          <Section title="Get Some Inspiration">
+            <ListGallery />
           </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -96,8 +86,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: 12,
     fontWeight: '600',
+    fontFamily:'Eina 03',
+    letterSpacing: -0.16,
+    textAlign: 'center',
   },
   sectionDescription: {
     marginTop: 8,
